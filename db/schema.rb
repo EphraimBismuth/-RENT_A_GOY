@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 2018_08_12_150459) do
   create_table "bookings", force: :cascade do |t|
     t.integer "jew_id"
     t.integer "goy_id"
-    # different statuses => "pending", "approved", "completed"
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
