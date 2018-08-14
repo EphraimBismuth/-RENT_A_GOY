@@ -1,0 +1,37 @@
+.goy_info{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5%;
+}
+
+.avatar{
+  min-width: 400px;
+}
+.name_title{
+  font-size: 36px;
+  color: $darkblue;
+
+}
+.identity{
+  margin-left: 10%;
+}
+.details{
+  display: flex;
+
+
+}
+.skills{
+  flex: 0 0 60%;
+}
+.price{
+  flex: 0 0 40%;
+
+}
+.bold_price{
+  font-weight: bold;
+  font-size: 32px;
+}
+.light_subtext{
+  margin-top: -1%;
+  color: $lightblue !important;
+}

@@ -68,7 +68,7 @@ goys_attributes = [
     name: "Cyrille",
     phone_number: "0606060606",
     address: "85 in the South of France",
-    profile_picture: "user1.jpeg",
+    profile_picture: "cyrille_goy.png",
     price: 50,
   },
   {
