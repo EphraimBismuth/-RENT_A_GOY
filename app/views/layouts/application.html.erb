@@ -9,12 +9,17 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
-  <body>
-    <%= render "shared/navbar_#{current_user ? "after" : "before"}" %>
+  <body class="<%= params[:controller] %> <%= params[:action] %>">
+
+    <%= render "shared/navbar_#{current_user ? 'after' : 'before'}" %>
+
     <%= render 'shared/flashes' %>
+    <%= yield :above_container %>
     <div class="container">
           <%= yield %>
     </div>
+    <%= yield :below_container %>
+    <%= render 'components/footer' %>
 
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
