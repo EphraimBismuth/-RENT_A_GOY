@@ -1,3 +1,16 @@
-<h1>Bookings#show</h1>
-<p>Find me in app/views/bookings/show.html.erb</p>
-<%= @booking.inspect %>
+<h3 class="text-center">Booked!</h3>
+
+
+<!-- #<Booking id: 18, jew_id: 39, goy_id: 27, status: "pending", created_at: "2018-08-14 14:07:38", updated_at: "2018-08-14 14:07:38", start_date: "2018-08-14", end_date: "2018-08-15">
+
+  <%= Booking %> -->
+  <div class="match">
+    <%= image_tag "#{@jew.profile_picture}", class: "avatar" %>
+    <div class="match-ok"><i class="fas fa-handshake" style="color:green; font-size: 64px;"></i></div>
+    <%= image_tag "#{@goy.profile_picture}", class: "avatar" %>
+  </div>
+  <div class="text-center" style="margin-top: 10%">
+    <%= link_to 'home', root_path, class: "btn-gag" %>
+  </div>
+
+

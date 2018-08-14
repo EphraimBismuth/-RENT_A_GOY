@@ -22,6 +22,9 @@ class BookingsController < ApplicationController
   end
 
   def show
+    @booking = Booking.find(params[:id])
+    @jew = Jew.find_by(params[:jew_id])
+    @goy = Goy.find_by(params[:goy_id])
   end
 
   def index
