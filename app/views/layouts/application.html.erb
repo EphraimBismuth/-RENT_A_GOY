@@ -10,7 +10,7 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <%= render "shared/navbar_#{current_user ? 'after' : 'before'}" %>
+    <%= render "shared/navbar_#{current_user ? "after" : "before"}" %>
     <%= render 'shared/flashes' %>
     <div class="container">
           <%= yield %>
