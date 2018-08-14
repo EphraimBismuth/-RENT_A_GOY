@@ -40,7 +40,7 @@ goys_attributes = [
     name: "Delarue",
     phone_number: "0606060606",
     address: "1 rue de la Liberté, 75010 Paris",
-    city: "Tel-Aviv",
+    city: "Paris",
     profile_picture: "user3.jpeg",
     price: 50,
   },
