@@ -12,7 +12,10 @@
   <body>
     <%= render "shared/navbar_#{current_user ? "after" : "before"}" %>
     <%= render 'shared/flashes' %>
-    <%= yield %>
+    <div class="container">
+          <%= yield %>
+    </div>
+
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>
