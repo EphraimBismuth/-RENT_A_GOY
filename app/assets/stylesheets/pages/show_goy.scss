@@ -1,11 +1,22 @@
+body.goys.show{
+  background-color: white;
+}
+
 .goy_info{
   display: flex;
   justify-content: space-between;
   margin-top: 5%;
 }
 
+.picture{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .avatar{
-  min-width: 400px;
+  height: 200px;
+  width: 200px;
 }
 .name_title{
   font-size: 36px;
