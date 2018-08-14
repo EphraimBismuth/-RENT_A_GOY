@@ -1,4 +1,30 @@
-<h1>Pages#home</h1>
+<h2 class="text-center">Find you shabbat Goy for the next shabbat</h2>
 
-<p>Find me in app/views/pages/home.html.erb</p>
-<%= render 'components/banner' %>
+<% content_for :above_container do %>
+  <%= render 'components/banner' %>
+<% end %>
+
+
+<div class="row">
+  <% @goys.each do |goy| %>
+    <%= render 'components/card', goy: goy %>
+  <% end %>
+</div>
+
+
+
+<% content_for :below_container do %>
+  <div class="explanation">
+    <div class="title-explanation">
+      <h3>What is Get a Goy ?</h3>
+    </div>
+    <div class="text-explanation">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium atque ratione pariatur distinctio dolores iusto quibusdam quisquam, minima facere? Expedita facere porro adipisci earum ut, sint asperiores, modi quis ipsa!</p>
+      <br>
+      <a href="#" class="btn-gag">register as a goy</a>
+    </div>
+  </div>
+<% end %>
+
+
+
