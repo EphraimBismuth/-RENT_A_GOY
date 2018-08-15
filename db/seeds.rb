@@ -197,3 +197,4 @@ bookings = [
 }
 ]
 Booking.create!(bookings)
+
