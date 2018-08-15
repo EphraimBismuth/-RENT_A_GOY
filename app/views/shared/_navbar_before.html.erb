@@ -7,10 +7,10 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Register as a Goy</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Bookings</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Find a Goy</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Sign in</a>
+    <%= link_to "Register as a Goy", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Bookings", bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Find a Goy", goys_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Sign in", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
     <!-- Profile picture with dropdown list -->
 <!--     <div class="navbar-wagon-item">
