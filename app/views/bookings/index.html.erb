@@ -1,9 +1,10 @@
-<h1>Bookings for <%=  @jew.name %></h1>
+<h1>Bookings for <%=  current_user.name %></h1>
 
 <% @bookings.each do |booking| %>
+  <% user = current_user.class == Jew ? booking.goy : booking.jew %>
   <div class="booking-contain">
-    <div class="booking-item" style="background-image: url('<%= image_path booking.goy.profile_picture %>');" >
-    <p class="booking-goy"><%= booking.goy.name %></p>
+    <div class="booking-item" style="background-image: url('<%= image_path user.profile_picture %>');" >
+    <p class="booking-goy"><%= user.name %></p>
     </div>
     <p class="booking-start"><%= booking.start_date %></p>
     <p class="booking-status"><%= booking.status %></p>

@@ -1,7 +1,6 @@
 class BookingsController < ApplicationController
     skip_before_action :authenticate_user!, only: [:show]
     before_action :set_booking, only:[:show]
-    before_action :set_jew, only: [:index]
     before_action :set_goy, only: [:create, :new]
 
   def create
@@ -25,8 +24,7 @@ class BookingsController < ApplicationController
   end
 
   def index
-    set_jew
-    @bookings = @jew.bookings.order(start_date: :asc)
+    @bookings = current_user.bookings.order(start_date: :asc)
   end
 
   def update
