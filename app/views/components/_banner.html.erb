@@ -2,12 +2,6 @@
   <div class="banner-content">
     <h1>Get a <span class="yellow-word">Goy</span></h1>
     <p>Keep Shabbat, get a goy </p>
-    <%= form_tag goys_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Search by city"
-       %>
-       <% end %>
+    <%= render 'components/search', placeholder: "Search goys in your city" %>
   </div>
 </div>
