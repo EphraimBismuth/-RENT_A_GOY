@@ -1,5 +1,4 @@
 <h1>Bookings for <%=  current_user.name %></h1>
-<% raise %>
 <% @bookings.each do |booking| %>
   <% user = current_user.class == Jew ? booking.goy : booking.jew %>
   <div class="booking-contain">
