@@ -12,14 +12,15 @@ class GoysController < ApplicationController
   def index
     # @goys = Goy.all
     # select{ |id, g| g[:city] == params[:city] && g[:startint_date] > params[:starting_date && g[:ending_date] < params[:ending_date]] }
-    @flats = Flat.where.not(latitude: nil, longitude: nil)
+    @goys = Goy.where.not(latitude: nil, longitude: nil)
 
-    @markers = @flats.map do |flat|
+    @markers = @goys.map do |goy|
       {
-        lat: flat.latitude,
-        lng: flat.longitude#,
+        lat: goy.latitude,
+        lng: goy.longitude#,
         # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
       }
+    end
   end
 
   def show
@@ -37,5 +38,5 @@ class GoysController < ApplicationController
   def set_goy
     @goy = Goy.find(params[:id])
   end
-end
+
 end
