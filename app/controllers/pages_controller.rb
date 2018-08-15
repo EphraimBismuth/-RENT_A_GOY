@@ -3,5 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @goys = Goy.all.limit(4)
+    @random = Goy.order('RANDOM()').first
   end
 end
