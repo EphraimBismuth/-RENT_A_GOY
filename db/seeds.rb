@@ -105,7 +105,7 @@ goys_attributes = [
     type: "Goy",
     name: "Alex",
     phone_number: "0606060606",
-    address: "1 rue de la Liberté, 75010 Paris",
+    address: "Tel aviv",
     city: "Netanya",
     profile_picture: "user4.jpeg",
     price: 50,
