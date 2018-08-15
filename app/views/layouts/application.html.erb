@@ -26,8 +26,6 @@
 
     <!-- add gmaps tags -->
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
-    <%= javascript_pack_tag 'application' %>
-
     <%= javascript_pack_tag "maps" %>
   </body>
 </html>
