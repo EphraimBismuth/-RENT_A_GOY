@@ -2,6 +2,6 @@
   <div class="banner-content">
     <h1>Get a <span class="yellow-word">Goy</span></h1>
     <p>Keep Shabbat, get a goy </p>
-    <%= link_to "see the goys", goys_path(@goys), class: "btn-gag" %>
+    <%= render 'components/search', placeholder: "Search goys in your city" %>
   </div>
 </div>
