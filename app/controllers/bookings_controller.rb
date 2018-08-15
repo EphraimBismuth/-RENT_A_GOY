@@ -1,16 +1,15 @@
 class BookingsController < ApplicationController
     skip_before_action :authenticate_user!, only: [:show]
     before_action :set_booking, only:[:show]
-    before_action :set_goy, only: [:create, :new]
+    # before_action :set_goy, only: [:create, :new]
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.goy = @goy
-    @booking.jew = current_user
+    @booking.goy = current_user
     @booking.status = "pending"
 
     if @booking.save
-      redirect_to @booking, notice: "Booking was created sucessfully."
+      redirect_to bookings_path, notice: "Booking was created sucessfully."
     else
       render :new
     end
@@ -25,9 +24,17 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = current_user.bookings.order(start_date: :asc)
+    @booking = Booking.new
   end
 
   def update
+    @booking = Booking.find(params[:id])
+    @booking.jew = current_user
+    if @booking.save
+      redirect_to @booking, notice: "Booking was created sucessfully."
+    else
+      redirect_to @booking, notice: "Booking was not created sucussfully."
+    end
   end
 
   private

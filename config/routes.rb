@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   end
 
   resources :jews, only: [:create, :new, :show, :update, :edit]
-  resources :bookings, only: [:show, :index, :update, :edit]
+  resources :bookings, only: [:show, :index, :update, :edit, :create]
 end

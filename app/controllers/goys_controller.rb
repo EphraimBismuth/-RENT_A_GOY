@@ -24,7 +24,7 @@ class GoysController < ApplicationController
   end
 
   def show
-
+    @bookings = @goy.bookings
   end
 
   def update
