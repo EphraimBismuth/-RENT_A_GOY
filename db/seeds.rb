@@ -197,3 +197,12 @@ bookings = [
 }
 ]
 Booking.create!(bookings)
+
+
+goy = Goy.new(email: "rubencattan@gmail.com",
+    password: "12345678",
+    type: "Goy",
+    name: "Ruben",
+    phone_number: "0606060906",
+    address: "4 avenue Jean Jaures, Charenton-le-Pont”,
+    city: "Charenton-le-Pont")
