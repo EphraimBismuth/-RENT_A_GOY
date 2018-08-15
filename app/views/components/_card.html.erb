@@ -2,11 +2,14 @@
   <!-- insert <div class="card"> -->
 
     <%= link_to goy_path(goy) do %>
-    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path goy.profile_picture if goy.profile_picture.present? %>);">
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path goy.profile_picture.present? ? goy.profile_picture : (image_path 'default.jpg') %>);">
       <div class="card-description">
-        <h2 class="goy-name"><%= goy.name %></h2>
-        <p class="goy-city"><%= goy.city %></p>
+        <h2 class="goy-name"><%= goy.name.present? ? goy.name : "Francis" %></h2>
+        <p class="goy-city"><%= goy.city.present? ? goy.city : "La saucisse" %></p>
       </div>
     </div>
     <% end %>
   </div>
+
+
+
