@@ -15,7 +15,7 @@ goys_attributes = [
     email: "frenchruben@frenchruben.com",
     password: "frenchruben",
     type: "Goy",
-    name: "Christian",
+    name: "Donald",
     phone_number: "0606060606",
     address: "1 rue de la Liberté, 75010 Paris",
     city: "Tel-Aviv",
@@ -26,7 +26,7 @@ goys_attributes = [
     email: "frenchruben2@frenchruben.com",
     password: "frenchruben",
     type: "Goy",
-    name: "Baptiste",
+    name: "Christophe",
     phone_number: "0606060606",
     address: "1 rue de la Liberté, 75010 Paris",
     city: "Tel-Aviv",
@@ -105,7 +105,7 @@ goys_attributes = [
     type: "Goy",
     name: "Alex",
     phone_number: "0606060606",
-    address: "1 rue de la Liberté, 75010 Paris",
+    address: "Tel aviv",
     city: "Netanya",
     profile_picture: "user4.jpeg",
     price: 50,
@@ -197,3 +197,4 @@ bookings = [
 }
 ]
 Booking.create!(bookings)
+

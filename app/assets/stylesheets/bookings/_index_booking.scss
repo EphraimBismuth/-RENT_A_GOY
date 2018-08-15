@@ -1,0 +1,19 @@
+.booking-contain{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.booking-item{
+  border-radius: 10px;
+  // margin-right:  20px;
+  width: 175px;
+  height: 20vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.booking-goy{
+  color: white;
+}

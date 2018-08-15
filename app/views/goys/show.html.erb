@@ -37,43 +37,43 @@
       </div>
     </div>
 
-    <br>
-    <!-- Button for booking temporary -->
-    <div class="book">
-      <%= link_to "Book NOW!", new_goy_booking_path(@goy), class: "btn-gag" %>
-    </div>
+
+<!--       <div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+></div> -->
 
     <!-- TO DO CALENDAR -->
-    <!-- <div class="calendar">
+    <div class="calendar">
 
       <h3>📆Upcoming Availability</h3>
       <table class="table table-striped">
         <tbody>
+          <% date = Date.today.next_occurring(:saturday) %>
           <tr>
-            <td>This Shabbat</td>
-            <td>Booked</td>
+            <td>This Shabbat<br/><%= date.strftime('%b %e') %></td>
+            <td><%= booking_link(date) %></td>
           </tr>
+          <% date += 7 %>
           <tr>
-            <td>Next Shabbat</td>
-            <td>Booked</td>
+            <td>Next Shabbat<br/><%= date.strftime('%b %e') %></td>
+            <td><%= booking_link(date) %></td>
           </tr>
+          <% date += 7 %>
           <tr>
-            <td>Next, Next Shabbat</td>
-            <td>Available</td>
-            <td>BOOK NOW !
-              <div class="book">
-                TO-DO BOOKING BUTTON
-              </div>
-            </td>
+            <td>Next, Next Shabbat<br/><%= date.strftime('%b %e') %></td>
+            <td><%= booking_link(date) %></td>
           </tr>
+          <% date += 7 %>
           <tr>
-            <td>Next, Next, Next Shabbat</td>
-            <td>Unavailable</td>
+            <td>Next, Next, Next Shabbat<br/><%= date.strftime('%b %e') %></td>
+            <td><%= booking_link(date) %></td>
           </tr>
         </tbody>
       </table>
-    </div> -->
-
+    </div>
   </div>
 </div>
 

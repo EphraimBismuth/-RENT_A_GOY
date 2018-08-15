@@ -1,10 +1,11 @@
 class BookingsController < ApplicationController
     skip_before_action :authenticate_user!, only: [:show]
-    before_action :set_booking, only:[:show, :create]
+    before_action :set_booking, only:[:show]
+    before_action :set_goy, only: [:create, :new]
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.goy = Goy.find(params[:goy_id])
+    @booking.goy = @goy
     @booking.jew = current_user
     @booking.status = "pending"
 
@@ -16,8 +17,6 @@ class BookingsController < ApplicationController
   end
 
   def new
-
-    @goy      = Goy.find(params[:goy_id])
     @booking  = Booking.new
   end
 
@@ -25,7 +24,7 @@ class BookingsController < ApplicationController
   end
 
   def index
-    @bookings = Booking.all
+    @bookings = current_user.bookings.order(start_date: :asc)
   end
 
   def update
@@ -33,7 +32,15 @@ class BookingsController < ApplicationController
 
   private
   def set_booking
-    # @booking = Booking.find(params[goy_id])
+    @booking = Booking.find(params[:booking_id] || params[:id])
+  end
+
+  def set_jew
+    @jew = Jew.find(params[:jew_id])
+  end
+
+  def set_goy
+    @goy = Goy.find(params[:goy_id])
   end
 
   def booking_params
