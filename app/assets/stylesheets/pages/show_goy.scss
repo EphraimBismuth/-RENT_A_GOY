@@ -1,21 +1,23 @@
-body.goys.show{
+body.goys.show
+{
   background-color: white;
 
 
-  .avaibilty{
+  .avaibilty
+  {
     margin-top: -41px;
   }
 }
 
-.goy-profil{
+.goy-profil
+{
   min-height: 70vh;
-  padding-top: 10%;
-
+  padding-top: 3%;
 }
 
 .profil-pic{
     width: 100%;
-    background-color: $yellow;
+    background-color: #004d7a;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -23,68 +25,39 @@ body.goys.show{
 }
 
 
+.price{
+  background-color: $light-gray;
+}
 
+.picandname
+{
+  text-align: center;
+  color: white;
 
+  p
+  {
+    margin-top: 4%;
+    font-weight: 400;
+    font-family: 'Open Sans';
+  }
 
+  .profil-name{
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: 20px;
+  }
+}
 
+.avaibilty{
+  padding-top: 5%;
 
+  h2{
+    margin: 4% 0;
+  }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// .goy_info{
-//   display: flex;
-//   justify-content: space-between;
-//   margin-top: 5%;
-// }
-
-// .picture{
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
-
-// .avatar{
-//   height: 200px;
-//   width: 200px;
-// }
-// .name_title{
-//   font-size: 36px;
-//   color: $darkblue;
-
-// }
-// .identity{
-//   margin-left: 10%;
-// }
-// .details{
-//   display: flex;
-
-
-// }
-// .skills{
-//   flex: 0 0 60%;
-// }
-// .price{
-//   flex: 0 0 40%;
-
-// }
-// .bold_price{
-//   font-weight: bold;
-//   font-size: 32px;
-// }
-// .light_subtext{
-//   margin-top: -1%;
-//   color: $lightblue !important;
-// }
+.availability-tab
+{
+  // display: inline-block;
+  // margin-left: 1%;
+}

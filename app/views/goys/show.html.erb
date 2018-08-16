@@ -2,51 +2,47 @@
 <% content_for :above_container do %>
 
   <div class="profil-pic">
-    <%= image_tag("#{@goy.profile_picture}", alt: "profile_picture", class: 'avatar') %>
+    <div class="picandname">
+      <%= image_tag("#{@goy.profile_picture}", alt: "profile_picture", class: 'avatar') %>
+      <p class="profil-name"> <%= @goy.name.capitalize %></p>
+      <p><%= "#{@goy.address}"%></p>
+      <p><%= "#{@goy.phone_number}"%></p>
+    </div>
   </div>
 
 <% end %>
 
 
 <div class="goy-profil">
-
-
   <div class="row">
-    <div class="col-xs-12 col-md-2">
-      <div class="contact">
-        <h3> <%= @goy.name %></h3>
-        <p><%= "#{@goy.address}"%></p>
-        <br>
-        <p><%= "#{@goy.phone_number}"%></p>
-      </div>
-    </div>
-    <div class="col-xs-12 col-md-2">
+    <div class="col-xs-12 col-md-6">
       <div class="skills">
-        <h3 class="light_subtext">Skills</h3>
-        <p>I'll take care of all you Jews!</p>
+        <h2 class="light_subtext" >Skills</h2>
+        <p style="margin: 0">I'll take care of all you Jews!</p>
       </div>
 
     </div>
-      <div class="col-xs-12 col-md-2">
+      <div class="col-xs-12 col-md-6">
         <div class="price">
-          <h3 class="light_subtext">Price</h3>
+          <h2 class="light_subtext" >Price</h2>
           <h4 class="bold_price"><%= number_to_currency(@goy.price) %></h4>
         </div>
     </div>
-    <div class="col-xs-12 col-md-6">
+    <div class="col-xs-12 col-md-12">
       <div class="avaibilty">
-        <h3>Upcoming Availability</h3>
-        <table class="table table-striped">
-            <tbody>
+        <h2>Upcoming Availability</h2>
+
+          <div class="row">
             <% @bookings.each do |booking| %>
               <% date = booking.start_date %>
-              <tr>
-                <td>Shabbat of<br/><%= date.strftime('%b %e %y') %></td>
-                <td><%= booking_link(date, booking) %></td>
-              </tr>
+                <div class="col-md-3 col-xs-12">
+                  <div class="availability-tab">
+                    <p>Shabbat of<br/><%= date.strftime('%b %e %y') %></p>
+                    <p><%= booking_link(date, booking) %></p>
+                  </div>
+                </div>
               <% end %>
-            </tbody>
-        </table>
+          </div>
       </div>
     </div>
   </div>

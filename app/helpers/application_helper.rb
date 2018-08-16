@@ -11,8 +11,8 @@ module ApplicationHelper
     if current_user.class == Goy
       link_to 'Cannot book other Goys', "#", class: 'btn btn-gag', disabled: true
     elsif booking.goy.booked_on?(date)
-      link_to 'Booked', "#", class: 'btn btn-gag', disabled: true
+      link_to 'Booked', "#", class: 'btn btn-available', disabled: true
     else
-      link_to 'Available', book_booking_path(booking, booking: {start_date: date, end_date: date}), method: :patch, class: 'btn btn-gag'    end
+      link_to 'Available', book_booking_path(booking, booking: {start_date: date, end_date: date}), method: :patch, class: 'btn btn-available'    end
   end
 end
