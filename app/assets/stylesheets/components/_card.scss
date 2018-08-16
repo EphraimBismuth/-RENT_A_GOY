@@ -1,14 +1,12 @@
 .card {
   height: 250px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
   color: white;
   position: relative;
   margin-bottom: 10%;
-  box-shadow: 5px 5px 100px rgba(0, 0, 0, 0.3);
-  border-radius: 4px;
-  border-bottom: 4px solid $darkblue;
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px !important;
 }
 
 .card-user {
@@ -20,7 +18,7 @@
 }
 
 .card-description {
-  background-color: rgba(253, 241, 141, 1);
+  background-color: white;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -28,12 +26,13 @@
 }
 
 .card-description h2 {
-  font-size: 24px;
+  font-size: 15px;
+  color: rgb(72, 72, 72);
 }
 
 .card-description p {
-  color: $darkblue;
-  font-size: 14px;
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 13px;
   opacity: 0.7;
   font-weight: lighter;
 }
