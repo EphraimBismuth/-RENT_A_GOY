@@ -19,7 +19,7 @@ goys_attributes = [
     phone_number: "0606060606",
     address: "5 Ben yehuda, Tel-Aviv",
     city: "Tel-Aviv",
-    profile_picture: "user1.jpeg",
+    profile_picture: "user1.jpg",
     price: 50,
   },
   {
@@ -30,7 +30,7 @@ goys_attributes = [
     phone_number: "0606060606",
     address: "Gorder, Tel-Aviv",
     city: "Tel-Aviv",
-    profile_picture: "user2.jpeg",
+    profile_picture: "user2.jpg",
     price: 50,
   },
   {
@@ -41,7 +41,7 @@ goys_attributes = [
     phone_number: "0606060606",
     address: "Pinsker, Tel-Aviv",
     city: "Paris",
-    profile_picture: "user3.jpeg",
+    profile_picture: "user3.jpg",
     price: 50,
   },
   {
@@ -52,7 +52,7 @@ goys_attributes = [
     phone_number: "0606060606",
     address: "Pussy Cat, Tel-Aviv",
     city: "Tel-Aviv",
-    profile_picture: "user4.jpeg",
+    profile_picture: "user4.jpg",
     price: 50,
   },
   {
@@ -63,7 +63,7 @@ goys_attributes = [
     phone_number: "0606060606",
     address: "Rotshild, Tel-Aviv",
     city: "Netanya",
-    profile_picture: "user5.jpeg",
+    profile_picture: "user5.jpg",
     price: 50,
   },
   {
@@ -85,7 +85,7 @@ goys_attributes = [
     phone_number: "0606060606",
     address: "Bazel, Tel-Aviv",
     city: "Netanya",
-    profile_picture: "user2.jpeg",
+    profile_picture: "user2.jpg",
     price: 50,
   },
   {
@@ -96,7 +96,7 @@ goys_attributes = [
     phone_number: "0606060606",
     address: "Hof Bograshov, Tel-Aviv",
     city: "Netanya",
-    profile_picture: "user3.jpeg",
+    profile_picture: "user3.jpg",
     price: 50,
   },
   {
@@ -107,7 +107,7 @@ goys_attributes = [
     phone_number: "0606060606",
     address: "Tel aviv",
     city: "Netanya",
-    profile_picture: "user4.jpeg",
+    profile_picture: "user4.jpg",
     price: 50,
   },
   {
@@ -118,7 +118,7 @@ goys_attributes = [
     phone_number: "0606060606",
     address: "Azrieli center, Tel-Aviv",
     city: "Netanya",
-    profile_picture: "user5.jpeg",
+    profile_picture: "user5.jpg",
     price: 50,
   }
 ]
@@ -132,7 +132,7 @@ jews_attributes = [
     phone_number: "0606060606",
     address: "1 rue de la Liberté, 75010 Paris",
     city: "Tel-Aviv",
-    profile_picture: "user3.jpeg",
+    profile_picture: "user3.jpg",
   },
   {
     email: "frenchruben12@frenchruben.com",
@@ -142,7 +142,7 @@ jews_attributes = [
     phone_number: "0606060606",
     address: "1 rue de la Liberté, 75010 Paris",
     city: "Tel-Aviv",
-    profile_picture: "user4.jpeg",
+    profile_picture: "user4.jpg",
   },
   {
     email: "RogerFederer4EVER@alwaysLate.com",
@@ -152,48 +152,63 @@ jews_attributes = [
     phone_number: "0606060606",
     address: "1 rue de la Liberté, 75010 Paris",
     city: "Netanya",
-    profile_picture: "user5.jpeg",
+    profile_picture: "user5.jpg",
   }
 ]
 Goy.create!(goys_attributes)
 Jew.create!(jews_attributes)
+
+goy = Goy.first
+
 # 5 bookings
 bookings = [
   {
     # ASK CYRILLE
-    jew_id: Jew.ids.sample,
+    # jew_id: Jew.ids.sample,
     goy_id: Goy.ids.sample,
     status: "approved",
     start_date: Date.new(2018,8,13),
-    end_date: Date.new(2018,9,13),
+    end_date: Date.new(2018,9,13)
 },
   {
-    jew_id: Jew.ids.sample,
+    # jew_id: Jew.ids.sample,
     goy_id: Goy.ids.sample,
     status: "pending",
     start_date: Date.new(2018, 8, 21),
-    end_date: Date.new(2018, 8, 22),
+    end_date: Date.new(2018, 8, 22)
 },
   {
-    jew_id: Jew.ids.sample,
+    # jew_id: Jew.ids.sample,
     goy_id: Goy.ids.sample,
     status: "completed",
     start_date: Date.new(2018, 8, 13),
-    end_date: Date.new(2018, 8, 20),
+    end_date: Date.new(2018, 8, 20)
 },
   {
-    jew_id: Jew.ids.sample,
+    # jew_id: Jew.ids.sample,
     goy_id: Goy.ids.sample,
     status: "approved",
     start_date: Date.new(2018, 10, 11),
-    end_date: Date.new(2018, 12, 13),
+    end_date: Date.new(2018, 12, 13)
 },
   {
-    jew_id: Jew.ids.sample,
+    # jew_id: Jew.ids.sample,
     goy_id: Goy.ids.sample,
     status: "approved",
     start_date: Date.new(2018, 8, 13),
-    end_date: Date.new(2018, 9, 13),
+    end_date: Date.new(2018, 9, 13)
+},
+  {
+    goy: Goy.first,
+    status: "approved",
+    start_date: Date.new(2019, 8, 13),
+    end_date: Date.new(2019, 9, 13)
+},
+  {
+    goy: Goy.first,
+    status: "approved",
+    start_date: Date.new(2020, 8, 13),
+    end_date: Date.new(2020, 9, 13)
 }
 ]
 Booking.create!(bookings)

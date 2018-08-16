@@ -12,8 +12,11 @@ class GoysController < ApplicationController
   def index
     # @goys = Goy.all
     # select{ |id, g| g[:city] == params[:city] && g[:startint_date] > params[:starting_date && g[:ending_date] < params[:ending_date]] }
-    @goys = Goy.where.not(latitude: nil, longitude: nil)
-
+    if params[:query].present?
+      @goys = Goy.where.not(latitude: nil, longitude: nil).where("city ILIKE ?", "%#{params[:query]}%")
+    else
+      @goys = Goy.where.not(latitude: nil, longitude: nil)
+    end
     @markers = @goys.map do |goy|
       {
         lat: goy.latitude,
@@ -24,7 +27,7 @@ class GoysController < ApplicationController
   end
 
   def show
-
+    @bookings = @goy.bookings
   end
 
   def update
