@@ -54,6 +54,14 @@ body.goys.show
   h2{
     margin: 4% 0;
   }
+  .row div{
+    padding: 1% 1%;
+
+  }
+  .row div:nth-child(2n){
+    // background-color: $light-gray;
+  }
+
 }
 
 .availability-tab
@@ -61,3 +69,10 @@ body.goys.show
   // display: inline-block;
   // margin-left: 1%;
 }
+
+
+
+
+
+
+
