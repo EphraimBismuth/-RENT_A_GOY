@@ -1,44 +1,36 @@
-<div class="goy_info">
-  <!-- goy picture -->
-  <div class="picture">
-   <%= image_tag("#{@goy.profile_picture}", alt: "profile_picture", class: "avatar") %>
+<% content_for :above_container do %>
+
+  <div class="profil-pic">
+    <%= image_tag("#{@goy.profile_picture}", alt: "profile_picture", class: 'avatar') %>
   </div>
-  <!-- goy contact, details, availability -->
-  <div class="identity">
-    <h2 class="name_title">
-    <%= @goy.name %>
-    </h2>
-    <!-- goy contact info -->
-    <div class="contact">
-      <p>
-        <%= "🏚 #{@goy.address}"%>
-        <!-- NEED TO UPDATE MODEL TO HAVE JUST CITY CATEGORY -->
+
+<% end %>
+
+<div class="goy-profil">
+  <div class="row">
+    <div class="col-xs-12 col-md-2">
+      <div class="contact">
+        <h3> <%= @goy.name %></h3>
+        <p><%= "#{@goy.address}"%></p>
         <br>
-        <%= "📞 #{@goy.phone_number}"%>
-        <!-- [HIDE NUMBER SO PPL MUST USE US] -->
-      </p>
+        <p><%= "#{@goy.phone_number}"%></p>
+      </div>
     </div>
-    <div class="details">
+    <div class="col-xs-12 col-md-2">
       <div class="skills">
-        <div class="light_subtext">Skills</div>
-        I'll take care of all you Jews!
-        <!-- GOY SKILLS NEED TO BE ADDED TO THE MODEL -->
-
-      </div>
-
-      <div class="price">
-        <div class="light_subtext">
-            per Shabbat
-          </div>
-        <div class="bold_price">
-          <%= number_to_currency(@goy.price) %>
-        </div>
-
+        <h3 class="light_subtext">Skills</h3>
+        <p>I'll take care of all you Jews!</p>
       </div>
     </div>
-
-    <!-- Upcoming Availability -->
-    <%= render 'shared/upcoming_availability' %>
+    <div class="col-xs-12 col-md-2">
+      <div class="price">
+        <h3 class="light_subtext">Price</h3>
+        <h4 class="bold_price"><%= number_to_currency(@goy.price) %></h4>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <!-- Upcoming Availability -->
+      <%= render 'shared/upcoming_availability' %>
+    </div>
   </div>
 </div>
-

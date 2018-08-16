@@ -1,11 +1,25 @@
 // Specific CSS for your home-page
 body.pages.home{
   background-color: white;
+
+  input{
+  background-color: rgba(250, 250, 250, 0.8);
+  color: white;
+  border: none;
+  font-family: 'Open Sans';
+
+  input:placeholder{
+    color: white;
+  }
+  }
 }
 
 h3{
   margin: 10% 0;
 }
+
+
+
 
 .explanation{
   margin-top: 0%;
