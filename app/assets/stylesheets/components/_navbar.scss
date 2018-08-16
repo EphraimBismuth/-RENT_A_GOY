@@ -9,9 +9,22 @@
   justify-content: space-between;
 }
 
+.navbar-logo-and-search-bar {
+  display: flex;
+  align-items: center;
+}
+
 /* Logo */
 .navbar-wagon-brand img {
   height: 50px;
+  flex: 0 0 20%;
+  margin-right: 20px;
+}
+
+.navbar-wagon input {
+  flex: 1 1 auto;
+  border-radius: 200px !important;
+  font-size: 14px !important;
 }
 
 /* User Avatar */
