@@ -19,3 +19,29 @@
   color: white;
 }
 
+
+.btn-available{
+  padding: 3px 5px;
+  border: 1px solid black;
+  text-transform: uppercase;
+  color: black;
+  font-weight: 300;
+  text-decoration: none;
+  font-size: 12px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.btn-available:hover{
+  text-decoration: none;
+  background-color: black;
+  color: white;
+}
+
+
+
+
+
+
+
+
