@@ -1,4 +1,4 @@
-<h1>Bookings for <%= current_user.name %></h1>
+<h1><%= current_user.name %>'s bookings</h1>
 
 <div class="booking-contain">
   <%= render 'shared/my_bookings' %>
@@ -6,15 +6,16 @@
 
 <!-- Goys can set/view their availability -->
 <% if current_user.class == Goy %>
-  <div>
-    <h2>Set Available Dates for <%= current_user.name %></h2>
-    <%= render 'goys/set_availability_form' %>
-  </div>
 
   <!-- Upcoming Availability -->
   <div>
     <h2>Edit Available Dates for <%= current_user.name %></h2>
   <%= render 'shared/upcoming_availability' %>
+  </div>
+
+  <div>
+    <h2>Set Available Dates for <%= current_user.name %></h2>
+    <%= render 'goys/set_availability_form' %>
   </div>
 
 <% end %>
