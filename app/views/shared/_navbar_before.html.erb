@@ -1,9 +1,11 @@
 <div class="navbar-wagon">
   <!-- Logo -->
-    <%= link_to root_path, class: 'navbar-wagon-brand' do %>
-      <%= image_tag "logo.png" %>
-    <% end %>
-    <%= render 'components/search', placeholder: "Search goys in your city" %>
+    <div class="navbar-logo-and-search-bar">
+      <%= link_to root_path, class: 'navbar-wagon-brand' do %>
+        <%= image_tag "logo.png" %>
+      <% end %>
+      <%= render 'components/search', placeholder: "Search goys in your city", class: 'navbar-search-tool' %>
+    </div>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
