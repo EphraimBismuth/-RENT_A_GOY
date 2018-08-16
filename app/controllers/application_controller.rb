@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:type, :city])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:type, :city, :name])
     devise_parameter_sanitizer.permit(:account_update, keys: [:available_from, :available_until])
   end
 end

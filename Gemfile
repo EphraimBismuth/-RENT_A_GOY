@@ -19,6 +19,10 @@ gem 'webpacker'
 
 gem "geocoder"
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'dependent-fields-rails'
+gem 'underscore-rails', '~> 1.8', '>= 1.8.3'
+gem 'jquery-rails'
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'
@@ -32,3 +36,5 @@ group :development, :test do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'dotenv-rails'
 end
+
+
