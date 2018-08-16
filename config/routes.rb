@@ -5,9 +5,5 @@ Rails.application.routes.draw do
   resources :goys, only: [:create, :new, :index, :show, :update, :edit]
 
   resources :jews, only: [:create, :new, :show, :update, :edit]
-  resources :bookings, only: [:show, :index, :update, :edit, :create] do
-    member do
-      patch :book
-    end
-  end
+  resources :bookings, except: [:new]
 end

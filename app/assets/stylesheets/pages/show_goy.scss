@@ -1,48 +1,78 @@
-body.goys.show{
+body.goys.show
+{
   background-color: white;
-}
-
-.goy_info{
-  display: flex;
-  justify-content: space-between;
-  margin-top: 5%;
-}
-
-.picture{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.avatar{
-  height: 200px;
-  width: 200px;
-}
-.name_title{
-  font-size: 36px;
-  color: $darkblue;
-
-}
-.identity{
-  margin-left: 10%;
-}
-.details{
-  display: flex;
 
 
+  .avaibilty
+  {
+    margin-top: -41px;
+  }
 }
-.skills{
-  flex: 0 0 60%;
+
+.goy-profil
+{
+  min-height: 70vh;
+  padding-top: 3%;
 }
+
+.profil-pic{
+    width: 100%;
+    background-color: #004d7a;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5%;
+}
+
+
 .price{
-  flex: 0 0 40%;
+  background-color: $light-gray;
+}
+
+.picandname
+{
+  text-align: center;
+  color: white;
+
+  p
+  {
+    margin-top: 4%;
+    font-weight: 400;
+    font-family: 'Open Sans';
+  }
+
+  .profil-name{
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: 20px;
+  }
+}
+
+.avaibilty{
+  padding-top: 5%;
+
+  h2{
+    margin: 4% 0;
+  }
+  .row div{
+    padding: 1% 1%;
+
+  }
+  .row div:nth-child(2n){
+    // background-color: $light-gray;
+  }
 
 }
-.bold_price{
-  font-weight: bold;
-  font-size: 32px;
+
+.availability-tab
+{
+  // display: inline-block;
+  // margin-left: 1%;
 }
-.light_subtext{
-  margin-top: -1%;
-  color: $lightblue !important;
-}
+
+
+
+
+
+
+
