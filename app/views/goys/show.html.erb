@@ -1,21 +1,22 @@
 <div class="goy_info">
+  <!-- goy picture -->
   <div class="picture">
    <%= image_tag("#{@goy.profile_picture}", alt: "profile_picture", class: "avatar") %>
   </div>
-
+  <!-- goy contact, details, availability -->
   <div class="identity">
     <h2 class="name_title">
     <%= @goy.name %>
     </h2>
+    <!-- goy contact info -->
     <div class="contact">
       <p>
-      <%= "🏚 #{@goy.address}"%>
-      <!-- NEED TO UPDATE MODEL TO HAVE JUST CITY CATEGORY -->
-      <br>
-      <%= "📞 #{@goy.phone_number}"%>
-      <!-- [HIDE NUMBER SO PPL MUST USE US] -->
-
-    </p>
+        <%= "🏚 #{@goy.address}"%>
+        <!-- NEED TO UPDATE MODEL TO HAVE JUST CITY CATEGORY -->
+        <br>
+        <%= "📞 #{@goy.phone_number}"%>
+        <!-- [HIDE NUMBER SO PPL MUST USE US] -->
+      </p>
     </div>
     <div class="details">
       <div class="skills">
@@ -36,22 +37,8 @@
       </div>
     </div>
 
-    <!-- TO DO CALENDAR -->
-    <div class="calendar">
-      <h3>📆Upcoming Availability</h3>
-      <table class="table table-striped">
-        <tbody>
-        <% @bookings.each do |booking| %>
-          <% date = booking.start_date %>
-          <tr>
-            <td>Shabbat of<br/><%= date.strftime('%b %e %y') %></td>
-            <td><%= booking_link(date, booking) %></td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
+    <!-- Upcoming Availability -->
+    <%= render 'shared/upcoming_availability' %>
   </div>
 </div>
-
 

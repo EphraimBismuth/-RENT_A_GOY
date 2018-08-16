@@ -7,12 +7,26 @@ module ApplicationHelper
     super(number, options)
   end
 
-  def booking_link(date, booking)
-    if current_user.class == Goy
-      link_to 'Cannot book other Goys', "#", class: 'btn btn-gag', disabled: true
-    elsif booking.goy.booked_on?(date)
-      link_to 'Booked', "#", class: 'btn btn-gag', disabled: true
+  def booking_link(goy, date, label = nil)
+    if goy == current_user
+      if goy.booked_on?(date)
+        unavailable_link(goy, date, label)
+      else
+        link_to 'Available', bookings_path(booking: {start_date: date, end_date: date, goy_id: goy.id}), method: :post, class: 'btn btn-gag'
+      end
     else
-      link_to 'Available', book_booking_path(booking, booking: {start_date: date, end_date: date}), method: :patch, class: 'btn btn-gag'    end
+      if goy.available_on?(date) && !goy.booked_on?(date)
+        link_to 'Available', bookings_path(booking: {start_date: date, end_date: date, goy_id: goy.id}), method: :post, class: 'btn btn-gag'
+      else
+        unavailable_link(goy, date, label)
+      end
+    end
+  end
+
+  def unavailable_link(goy, date, label)
+    booking = goy.booking_on(date)
+    label = label || (booking.jew ? "Booked to #{booking.jew == current_user ? "me" : booking.jew.name}" : "Unavailable")
+    disabled = current_user.class == Jew && current_user != booking.jew
+    link_to label, booking_path(booking), method: :delete, class: 'btn btn-gag', disabled: disabled
   end
 end

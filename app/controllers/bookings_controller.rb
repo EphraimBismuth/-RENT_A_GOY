@@ -5,8 +5,8 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.goy = current_user
     @booking.status = "pending"
+    @booking.jew = current_user if current_user.class == Jew
 
     if @booking.save
       redirect_to bookings_path, notice: "Booking was created sucessfully."
@@ -25,10 +25,17 @@ class BookingsController < ApplicationController
   def index
     @bookings = current_user.bookings.order(start_date: :asc)
     @booking = Booking.new
+    @goy = current_user
   end
 
   def update
 
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to bookings_path
   end
 
   def book
@@ -55,6 +62,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date)
+    params.require(:booking).permit(:start_date, :end_date, :goy_id)
   end
 end
