@@ -12,7 +12,7 @@
 <% end %>
 <% end %>
 
-<% if current_user.class == "Goy" %>
+<% if current_user.class == Goy %>
 <div>
   <h2>Set Available Dates for <%= current_user.name %></h2>
   <%= simple_form_for @booking do |f| %>

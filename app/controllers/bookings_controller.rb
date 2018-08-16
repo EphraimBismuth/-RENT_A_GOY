@@ -28,6 +28,10 @@ class BookingsController < ApplicationController
   end
 
   def update
+
+  end
+
+  def book
     @booking = Booking.find(params[:id])
     @booking.jew = current_user
     if @booking.save
