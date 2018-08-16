@@ -1,10 +1,12 @@
 <div class="navbar-wagon">
   <!-- Logo -->
 
-    <%= link_to root_path, class: 'navbar-wagon-brand' do %>
-      <%= image_tag "logo.png", style: "height: 40px;" %>
-    <% end %>
-    <%= render 'components/search', placeholder: "Search goys in your city" %>
+    <div class="navbar-logo-and-search-bar">
+      <%= link_to root_path, class: 'navbar-wagon-brand' do %>
+        <%= image_tag "logo.png" %>
+      <% end %>
+      <%= render 'components/search', placeholder: "Search goys in your city", class: 'navbar-search-tool' %>
+    </div>
 
 
   <!-- Right Navigation -->
@@ -18,7 +20,6 @@
       <div class="dropdown">
        <%= image_tag current_user.profile_picture.present? ? current_user.profile_picture : (image_path 'default.jpg'), class: "avatar dropdown-toggle", id: "navbar-wagon-menu", data: { toggle: "dropdown" } %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li><a href="#">My account</a></li>
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
                 <i class=“fa fa-sign-out”></i> <%= t(".sign_out", default: "Log out") %>
