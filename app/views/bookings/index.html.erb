@@ -1,11 +1,45 @@
 <h1>Bookings for <%=  current_user.name %></h1>
 <% @bookings.each do |booking| %>
-  <% user = current_user.class == Jew ? booking.goy : booking.jew %>
-  <div class="booking-contain">
-    <div class="booking-item" style="background-image: url('<%= image_path user.profile_picture %>');" >
+<% user = current_user.class == Jew ? booking.goy : booking.jew %>
+<div class="booking-contain">
+  <% if !user.nil? %>
+  <div class="booking-item" style="background-image: url('<%= image_path user.profile_picture %>');" >
     <p class="booking-goy"><%= user.name %></p>
-    </div>
-    <p class="booking-start"><%= booking.start_date %></p>
-    <p class="booking-status"><%= booking.status %></p>
   </div>
+  <p class="booking-start"><%= booking.start_date %></p>
+  <p class="booking-status"><%= booking.status %></p>
+</div>
+<% end %>
+<% end %>
+
+<% if current_user.class == Goy %>
+<div>
+  <h2>Set Available Dates for <%= current_user.name %></h2>
+  <%= simple_form_for @booking do |f| %>
+  <div class="form-inputs">
+    <%= f.input :start_date%>
+    <%= f.input :end_date%>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+  <% end %>
+</div>
+
+<div>
+  <div class="calendar">
+    <h3>📆Upcoming Availability</h3>
+    <table class="table table-striped">
+      <tbody>
+        <% @bookings.each do |booking| %>
+        <% date = booking.start_date %>
+        <tr>
+          <td>Shabbat of<br/><%= date.strftime('%b %e %y') %></td>
+          <td><%= booking_link(date, booking) %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
 <% end %>
