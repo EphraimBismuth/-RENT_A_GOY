@@ -1,4 +1,3 @@
-
 <% content_for :above_container do %>
 
   <div class="profil-pic">
@@ -7,10 +6,7 @@
 
 <% end %>
 
-
 <div class="goy-profil">
-
-
   <div class="row">
     <div class="col-xs-12 col-md-2">
       <div class="contact">
@@ -25,29 +21,16 @@
         <h3 class="light_subtext">Skills</h3>
         <p>I'll take care of all you Jews!</p>
       </div>
-
     </div>
-      <div class="col-xs-12 col-md-2">
-        <div class="price">
-          <h3 class="light_subtext">Price</h3>
-          <h4 class="bold_price"><%= number_to_currency(@goy.price) %></h4>
-        </div>
+    <div class="col-xs-12 col-md-2">
+      <div class="price">
+        <h3 class="light_subtext">Price</h3>
+        <h4 class="bold_price"><%= number_to_currency(@goy.price) %></h4>
+      </div>
     </div>
     <div class="col-xs-12 col-md-6">
-      <div class="avaibilty">
-        <h3>Upcoming Availability</h3>
-        <table class="table table-striped">
-            <tbody>
-            <% @bookings.each do |booking| %>
-              <% date = booking.start_date %>
-              <tr>
-                <td>Shabbat of<br/><%= date.strftime('%b %e %y') %></td>
-                <td><%= booking_link(date, booking) %></td>
-              </tr>
-              <% end %>
-            </tbody>
-        </table>
-      </div>
+      <!-- Upcoming Availability -->
+      <%= render 'shared/upcoming_availability' %>
     </div>
   </div>
 </div>

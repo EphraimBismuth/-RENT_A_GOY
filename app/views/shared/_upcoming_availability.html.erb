@@ -1,0 +1,15 @@
+  <div class="calendar">
+    <h3> 📆 Upcoming Availability</h3>
+    <table class="table table-striped">
+      <tbody>
+        <% date = Date.today.next_occurring(:saturday) - 1.week %>
+        <% 10.times do %>
+        <% date += 1.week %>
+        <tr>
+          <td>Shabbat of<br/><%= date.strftime('%b %e %y') %></td>
+          <td><%= booking_link(@goy, date) %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>

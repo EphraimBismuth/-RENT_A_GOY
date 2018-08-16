@@ -1,0 +1,10 @@
+<% @bookings.each do |booking| %>
+    <% user = current_user.class == Jew ? booking.goy : booking.jew %>
+    <% if !user.nil? %>
+      <div class="booking-item" style="background-image: url('<%= user.profile_picture? ? image_path(user.profile_picture) : ''; %>');" >
+        <p class="booking-goy"><%= user.name %></p>
+      </div>
+      <p class="booking-start"><%= booking.start_date %></p>
+      <p class="booking-status"><%= booking_link(booking.goy, booking.start_date, "Cancel Booking") %></p>
+    <% end %>
+  <% end %>
